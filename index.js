@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', async (req, res) => {
+  res.json("nice working");
+});
 // Get all todos
 app.get('/api/todos', async (req, res) => {
   const todos = await prisma.todo.findMany();
